@@ -1,0 +1,233 @@
+$background-color: #F9F9F9;
+$font: 'Roboto', sans-serif;
+$color: #32BC93;
+
+footer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    padding-left: 20px;
+    bottom: 0%;
+    z-index: 200;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.911);
+    width: 100%;
+
+    .non-responsive {
+        width: 100%;
+        display: flex;
+        justify-content: inherit;
+        align-items: inherit;
+    }
+
+    .logo {
+        width: 60px;
+        margin-left: 30px;
+    }
+
+    .number {
+        margin-right: auto;
+        margin: 0px 50px;
+        color: $background-color;
+        font-family: $font;
+        font-size: 22px;
+        font-weight: bolder;
+        text-align: start;
+    }
+
+    .idk {
+        font-size: 34px;
+        font-family: $font;
+        font-weight: 300;
+        color: $background-color;
+        margin: 0px 10px;
+    }
+
+    form {
+        display: flex;
+        justify-content: start;
+        margin-right: 30px;
+
+        .background-submit {
+            background-color: $color;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .flexbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            direction: ltr;
+            padding-right: 5px;
+            width: 220px;
+            margin-left: 4px;
+            height: 45px;
+            font-size: 20px;
+            font-family: $font;
+            font-weight: bolder;
+            text-align: end;
+            border: none;
+        }
+
+        ::placeholder {
+            color: black;
+            font-family: $font;
+            font-weight: 700;
+        }
+    }
+
+    .background {
+        margin: auto;
+        margin-right: 0;
+        background-color: $color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+
+        .arrowbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 500;
+            background-color: rgba(0, 0, 0, 0.555);
+            width: 40px;
+            height: 35px;
+            transition: all 0.3s linear;
+            cursor: pointer;
+
+            .arrow {
+                font-size: 18px;
+                color: white;
+            }
+        }
+
+        .inactive {
+            opacity: 0;
+        }
+
+        .arrowbox:hover {
+            background-color: rgba(0, 0, 0, 0.897);
+        }
+    }
+
+    .responsive {
+        display: none;
+    }
+}
+
+@media (max-width: 1600px) {
+    footer {
+        form {
+            input {
+                width: 180px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    footer {
+        .idk {
+            font-size: 26px;
+        }
+
+        .number {
+            font-size: 18px;
+            margin: 0;
+            margin: 0px 10px;
+        }
+
+        form {
+            input {
+                width: 170px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1320px) {
+    footer {
+        .idk {
+            font-size: 20px;
+        }
+
+        .number {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 1171px) {
+    footer {
+        form {
+            input {
+                width: 140px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1030px) {
+    footer {
+        align-items: unset;
+        padding: 0;
+        height: 50px;
+
+        .non-responsive {
+            display: none !important;
+        }
+        
+        .responsive {
+            display: block;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            .first-button, .second-button {
+                border: none;
+                width: 100%;
+                height: 100%;
+                font-size: 22px;
+                background-color: $color;
+                color: #ffffff;
+                font-weight: bolder;
+                border: 2px solid $background-color;
+                transition: all 0.3s ease-out;
+            }
+
+            .first-button {
+                border-right: none;
+            }
+
+            .second-button {
+                border-left: none;
+            }
+            
+            button:hover {
+                background-color: #029e6f;
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    footer {
+        .responsive {
+            .first-button {
+                border-right: 1px solid;
+            }
+
+            .second-button {
+                border-left: 1px solid;
+            }
+        }
+    }
+}

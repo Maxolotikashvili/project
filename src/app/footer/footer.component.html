@@ -1,0 +1,34 @@
+<footer>
+  <div class="non-responsive">
+  <div class="background">
+    <div class="arrowbox inactive" (click)="handleScroll()">
+      <a href="#">
+        <fa-icon [icon]="arrow" class="arrow"></fa-icon>
+      </a>
+    </div>
+  </div>
+
+  <span class="idk">הצטרפו להצלחה!</span>
+  
+  <!-- Form -->
+  <form [formGroup]="userForm" (submit)="handleSubmit($event)"> 
+    <div class="flexbox">
+      <input type="text" required placeholder="*שם" formControlName="email" />
+      <input type="text" required placeholder="*טלפון" formControlName="phone"/>
+    </div>
+
+    <div class="flexbox">
+      <input type="text" placeholder="דוא״ל" formControlName="message"/>
+      <input type="submit" style="cursor: pointer;" class="background-submit" value="שלח >"/>
+    </div>
+  </form>
+
+  <span class="number">או צרו קשר בטלפון 073-3962993</span>
+  <img src="/assets/logo-neto.png" class="logo" alt="" />
+  </div>
+
+  <div class="responsive">
+    <button class="second-button" (click)="scrollToForm()">להשארת פרטים</button>
+    <button class="first-button">התקשרו עכשיו</button>
+  </div>
+</footer>

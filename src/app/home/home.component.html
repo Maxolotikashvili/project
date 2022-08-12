@@ -1,0 +1,202 @@
+<section>
+  <div class="homebox">
+    <swiper
+      [effect]="'fade'"
+      [pagination]="{ clickable: true }"
+      [loop]="true"
+      [autoplay]="{ delay: 3000, disableOnInteraction: false }"
+      [keyboard]="{ enabled: true }"
+      class="swiper-home">
+
+      <ng-template swiperSlide>
+        <div class="background">
+          <div class="home">
+            <h3>Lorem Ipsum</h3>
+
+            <div class="linebox">
+              <div class="line"></div>
+              <div class="square"></div>
+            </div>
+          </div>
+          <div class="imagebox">
+            <img src="/assets/slide1.jpg" />
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template swiperSlide>
+        <div class="background">
+          <div class="home">
+            <h3>Lorem Ipsum</h3>
+
+            <div class="linebox">
+              <div class="line"></div>
+              <div class="square"></div>
+            </div>
+          </div>
+          <div class="imagebox">
+            <img src="/assets/slide2.jpg" />
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template swiperSlide>
+        <div class="background">
+          <div class="home">
+            <h3>Lorem Ipsum</h3>
+            <div class="linebox">
+              <div class="line"></div>
+              <div class="square"></div>
+            </div>
+          </div>
+          <div class="imagebox">
+            <img src="/assets/slide3.jpg" />
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template swiperSlide>
+        <div class="background">
+          <div class="home">
+            <h3>Lorem Ipsum</h3>
+
+            <div class="linebox">
+              <div class="line"></div>
+              <div class="square"></div>
+            </div>
+          </div>
+          <div class="imagebox">
+            <img src="/assets/slide4.jpg" />
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+      <fa-icon (click)="handleScroll()" style="cursor: pointer;" [icon]="arrows" class="arrows"></fa-icon>
+  </div>
+</section>
+
+<div class="background-body">
+  <!-- Section II ( Body ) -->
+  <section id="section2">
+
+    <div class="textbox1">
+      <h3>על הפרויקט</h3>
+      <div class="linebox">
+        <div class="line1"></div>
+        <div class="square1"></div>
+      </div>
+      <p>
+        BSR SARONA הינו פרויקט יוקרתי המוקם בלוקיישן הנחשק ביותר בתל אביב, נקודת
+        מפגש חד פעמית בין ההיסטוריה למחר. בואו לעשות אקזיט לאיכות החיים שלכם, עם
+        מגוון דירות ברמת גימור מושלמת שלא הכרתם.
+        <span>BSR SARONA מעל הכל בית.</span>
+      </p>
+    </div>
+  
+    <div class="photobox1"></div>
+  </section>
+
+  <!-- Section III -->
+  <section id="section3" style="margin-top: 50px">
+    <div class="textbox2">
+      <h3>עיקרי המפרט</h3>
+      <div class="linebox">
+        <div class="line2"></div>
+        <div class="square2"></div>
+      </div>
+      <div class="listbox">
+        <ul>
+          <li *ngFor="let item of list1">
+            <a>{{ item }}</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li *ngFor="let item of list2">
+            <a>{{ item }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="photobox2"></div>
+  </section>
+
+  <section id="section4">
+
+    <div class="textbox3">
+      <h3>המיקום והסביבה</h3>
+      <div class="linebox">
+        <div class="line3"></div>
+        <div class="square3"></div>
+      </div>
+
+      <ul>
+        <li>
+          <a
+            >במרכז הרובע התרבותי השוקק של תל אביב, מרחק הליכה ממוזיאון תל אביב,
+            משיטוט ברוטשילד או מטבילה מפנקת בים.</a
+          >
+        </li>
+
+        <li>
+          <a
+            >ובתוכו גינות ציוריות, פינות ישיבה מטופחות ושבילים קסומים בין מבני
+            אבן קלאסיים.</a
+          >
+        </li>
+
+        <li>
+          <a>40 דונם של פארק ירוק בטבורה של תל אביב.</a>
+        </li>
+
+        <li>
+          <a>נקודת מפגש גאוגרפית , חד פעמית בין ההיסטוריה למחר.</a>
+        </li>
+      </ul>
+    </div>
+    <img src="/assets/map.jpg" alt="map" class="map" (click)="openImage()" />
+  </section>
+
+  <section id="section5">
+
+    <div class="box">
+      <h3>אודות קבוצת בסר</h3>
+      <div class="linebox">
+        <div class="line4"></div>
+        <div class="square4"></div>
+      </div>
+      
+        <img src="/assets/last.png" style="margin-top: 70px;" alt="image" />
+
+      <p>
+        קבוצת ב.ס.ר הינה קבוצה הנדסית מובילה, המתמחה בניהול פרויקטים בתחום
+        הנדל”ן בישראל ובעולם מזה 35 שנה. הקבוצה מנוהלת על ידי אינג’ נחשון קיויתי
+        ולצידו צוות מנהלים מקצועי. הקבוצה הגתה ויסדה את תחום קבוצות הרכישה
+        בישראל ומובילה אותו מזה שלושה עשורים, במתכונת של בנייה עצמית המכונה
+        “שיטת ב.ס.ר”. קבוצת ב.ס.ר נהנית ממוניטין רב המתבסס על יכולות ניהול,
+        תכנון וביצוע של פרויקטים נדל”נים, לאורך השנים יזמה והקימה הקבוצה אלפי
+        יחידות דיור ממגורים ומאות אלפי מ”ר של שטחי מסחר ומשרדים בישראל, ארה”ב
+        ואירופה. הקבוצה לוקחת חלק פעיל בפרויקט “אמץ לוחם” זה מספר שנים, במסגרתו
+        היא מאמצת את היחידה המובחרת “אגוז”.
+      </p>
+
+      <div class="form">
+        <form [formGroup]="userForm" (submit)="handleSubmit($event)">
+          <input type="text" required placeholder="*שם" formControlName="email" />
+          <input type="text" required placeholder="*טלפון" formControlName="phone"/>
+          <input type="text" placeholder="דוא״ל" formControlName="message"/>
+          <button type="submit" class="background-submit" [disabled]="userForm.status === 'INVALID'">שלח ></button>
+
+          <mat-spinner color="primary" diameter="70" *ngIf="spinnerMode"></mat-spinner>
+          <span class="success" *ngIf="formSuccessMessage">{{formSuccessMessage}}</span>
+          <span class="error" *ngIf="formErrorMessage">{{formErrorMessage}}</span>
+        </form>
+
+        <img src="/assets/logo-neto.png" class="footer-logo" alt="Logo">
+      </div>
+    
+    </div>
+    <div class="photobox3"></div>
+  </section>
+</div>

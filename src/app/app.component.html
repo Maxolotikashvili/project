@@ -1,0 +1,26 @@
+<header>
+  <div class="barbox">
+    <fa-icon [icon]="bar" [class]="classBar" (click)="handleBar(true)"></fa-icon>
+    <fa-icon [icon]="xmark" [class]="classXmark" (click)="handleBar(false)"></fa-icon>
+  </div>
+
+  <nav id="nav">
+    <ul>
+
+      <li class="logo-li" (click)="handleScroll(0)">
+        <img class="logo" src="/assets/logo-neto.png" alt="Logo">
+      </li>
+
+      <li class="li li1" (click)="handleScroll(961)">אַחֵר</li>
+      <li class="li li2" (click)="handleScroll(1856)">ניקוי</li>
+      <li class="li li3" (click)="handleScroll(2676)">תחזוקz</li>
+      <li class="li li4" (click)="handleScroll(3607)">בִּטָחוֹן</li>
+
+    </ul>
+
+    <img src="/assets/logo-neto.png" class="responsive-logo" (click)="handleScroll(0)" alt="logo">
+  </nav>
+</header>
+
+<app-home></app-home>
+<app-footer></app-footer>

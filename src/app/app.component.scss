@@ -1,0 +1,166 @@
+$color: #2a3633;
+$green: #32BC93;
+$font: 'PT Root UI';
+
+header {
+    position: fixed;
+    padding: 20px 10px 0px 0px;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+
+    .barbox {
+        display: none;
+        width: fit-content;
+
+        .bar {
+            display: none;
+        }
+
+        .xmark {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+
+            li {
+                cursor: pointer;
+                transition: all 0.2s linear;
+
+                .logo {
+                    width: 60px;
+                    margin: 0px 40px 0px 20px;
+                }
+            }
+
+            .li {
+                margin-right: 15px;
+                font-size: 20px;
+                color: $color;
+                padding-bottom: 10px;
+                border-bottom: 3px solid transparent;
+                transition: all 0.2s linear;
+            }
+
+            .li1-active,
+            .li2-active,
+            .li3-active,
+            .li4-active {
+                border-color: $color;
+            }
+
+            li:hover,
+            .list1-active,
+            .list2-active,
+            .list3-active,
+            .list4-active {
+                border-color: $color;
+            }
+        }
+
+        .responsive-logo {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1030px) {
+    header {
+        background-color: black;
+        padding-right: 0 !important;
+
+        .barbox {
+            display: block;
+            user-select: none;
+            margin-right: 30px;
+            width: fit-content;
+
+            .bar {
+                color: #ffffff;
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+            }
+
+            .bar-inactive {
+                display: none;
+            }
+
+            .xmark-active {
+                color: #ffffff;
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+            }
+        }
+
+        nav, .nav-active {
+            width: 0%;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 50px;
+
+            ul {
+                width: 0%;
+                flex-direction: column;
+                transition: all 0.3s linear;
+
+                .logo-li {
+                    display: none;
+                }
+
+                li {
+                    display: none;
+                    padding: 10px;
+                    margin-right: 0 !important;
+                    color: white !important;
+                    border-bottom: none !important;
+                    font-size: 0px !important;
+                }
+
+                li:hover {
+                    background-color: gray;
+                }
+            }
+
+            .responsive-logo {
+                display: block;
+                position: absolute;
+                top: 10%;
+                left: 2%;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+            }
+        }
+
+        .nav-active {
+            width: 100%; 
+
+            ul {
+                width: 100%;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.781);
+
+                .logo-li {
+                    display: none;
+                }
+
+                li {
+                    display: flex;
+                    width: 100%;
+                    padding: 10px;
+                    color: white !important;
+                    border-bottom: none !important;
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }
+}
