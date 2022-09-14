@@ -9,8 +9,6 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent implements OnInit {
   title = 'project';
 
-  // scrollTop: any = document.documentElement.scrollTop;
-
   bar = faBars;
   xmark = faXmark;
 

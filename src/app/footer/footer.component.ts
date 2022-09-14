@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { MatDialog } from '@angular/material/dialog';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import {
+  faAngleDown,
+  faAnglesUp,
+  faAngleUp,
+} from '@fortawesome/free-solid-svg-icons';
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-footer',
@@ -8,24 +15,46 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  arrow: any = faAngleUp;
+  angleDown: any = faAngleDown;
+  angleUp: any = faAngleUp;
+  anglesUp: any = faAnglesUp;
+  whatsup: any = faWhatsapp;
   userForm!: FormGroup;
 
   API_URL = 'http://95.216.40.62:5012';
 
-  // Getter Variables
+  // UserForm Getter Variables
   Email!: any;
   Phone!: any;
   message!: any;
 
-  constructor(private fb: FormBuilder) {}
+  // Blank
+  blank: boolean = false;
+
+  // FooterForm Getter Variables
+  Email_Footer!: any;
+  PhoneNumber!: any;
+  CompanyName!: any;
+  CardNumber!: any;
+  Cvv!: any;
+  Expiry!: any;
+  CardOwner!: any;
+
+  expiryMonthTextField: string = '';
+  dateCondition: boolean = false;
+  
+  // Error
+  formErrorMessage: string = '';
+  formSuccessMessage: string = '';
+
+  constructor(private fb: FormBuilder, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     document.addEventListener('scroll', () => {
       const scrollTop: any = document.documentElement.scrollTop;
       const arrowbox: any = document.querySelector('.arrowbox');
 
-      if (scrollTop === 0) {
+      if (scrollTop <= 845) {
         arrowbox?.classList.add('inactive');
       } else {
         arrowbox?.classList.remove('inactive');
@@ -48,10 +77,22 @@ export class FooterComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  scrollToForm() {
-    window.scrollTo(0, 4288);
+  openFooter(condition: string) {
+    if (condition === 'open') {
+      this.blank = true;
+
+      gsap.from(document.querySelector('.blankbox'), {
+        ease: 'power4',
+        duration: 0.7,
+        y: 500,
+      });
+
+    } else {
+      this.blank = false;
+    }
   }
 
+  // Post Request
   async handleSubmit(e: any) {
     e.preventDefault();
 
@@ -78,7 +119,7 @@ export class FooterComponent implements OnInit {
 
       if (response.status === 200) {
         alert('Message Sent Successfuly');
-        return
+        return;
       }
 
       const responseToJSON = await response.json();
@@ -87,8 +128,6 @@ export class FooterComponent implements OnInit {
     } catch (err: any) {
       let errorMessage = 'Error Occured';
       alert(errorMessage);
-
-      console.log('rato')
     }
   }
 }

@@ -9,8 +9,9 @@ import { SwiperModule } from "swiper/angular";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ImageComponent } from './image/image.component';
+import { BlankComponent } from './blank/blank.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ImageComponent } from './image/image.component';
     AppComponent,
     HomeComponent,
     FooterComponent,
-    ImageComponent
+    ImageComponent,
+    BlankComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,85 @@
+<div class="bigbox">
+  <div class="logobox">
+    <img src="/assets/logo-neto.png" class="logo" alt="logo" />
+    <h4>Neto Group</h4>
+  </div>
+
+  <div class="line"></div>
+  <div class="h2box">
+    <h2>New Client Application Form</h2>
+    <div class="column"></div>
+
+    <div class="columnbox">
+      <h6>Lorem Ipsum</h6>
+      <h6>Lorem Ipsum</h6>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="textbox">
+    <h5>קבוצת נטו</h5>
+    <p>
+      הסכם התקשרות | הזמנה לשירותי מוקד דמי שירות המוקד 7.50 ₪ לכל שעת עבודה
+      עבור כל מצלמה (המחיר לא כולל מע"מ)
+    </p>
+  </div>
+
+  <!-- Form -->
+  <form (submit)="handleSubmit($event)" [formGroup]="userForm">
+      <input type="text" required placeholder="Company Name" />
+      <input type="text" required placeholder="Email" />
+      <input type="number" required placeholder="Phone Number" />
+      <input type="text" required placeholder="Card Holder" />  
+      <input type="text" required placeholder="lorem ipsum" />
+      <input type="text" required placeholder="lorem ipsum">
+      <div class="cardbox">
+        <input type="text" required placeholder="Card Number" class="card-number"/>
+        <input type="text" required placeholder="MM / YY"  class="card-expiration-date"/>
+        <input type="text" required placeholder="Cvv" class="card-cvv" />
+      </div>
+      <input style="margin-top: 12px;" type="text" required placeholder="lorem ipsum">
+
+      <button type="submit" [disabled]="userForm.status === 'INVALID'">Submit</button>
+  </form>
+
+  <div class="line"></div>
+
+  <div class="listbox">
+   <ol>
+    <li>
+      1. שירות המוקד ישלח כל יום דוח עם פויינטרים שיגדיר המזמין , בנוסף יישלחו
+    </li>
+    <li>
+      2. אחת לכל חודש בין ה 1 ל- 5 בכל חודש תגיש קבוצת נטו למזמין חשבון מפורט בדוא"ל , בגין השירותים שניתנו על ידו בחודש החולף
+    </li>
+    <li>
+      3. התשלום החודשי יבוצע 3 ימים לאחר קבלת דוח השעות ולא יאוחר לחודש בגין אותו חודש השירות.
+    </li>
+    <li>
+      4. המזמין יקבע את זמני השירות ויוכל לשנות אותם מפעם לפעם בהודעה בקבוצת WhatsAPP המשותפת בלבד .
+    </li>
+    <li>
+      5. שירות המוקד יחובר בפועל כ – 3 ימי עסקים מיום חתימת ההסכם
+    </li>
+
+   </ol>
+   <ol>
+    <li>
+      6. אי ביצוע תשלום במועד יחייב את המזמין בריבית פיגורים בשיעור המקסימלי שגובה הבנק , אי הסדרת התשלום באופן מלא יוביל להפסקת השירות למזמין באופן מיידי , ללא התראה מוקדמת ולמזמין לא תהינה טענות כלפי קבוצת נטו בשל כך.
+    </li>
+    <li>
+      7. חיבור חוזר לאחר ניתוק עקב אי תשלום יחויב בעלות חיבור על 280 ₪ .
+    </li>
+    <li>
+      8. קבוצת נטו תהייה רשאית לפרסם את שם המזמין ולוגו החברה .
+    </li>
+    <li>
+      9. קבוצת נטו רשאית לעדכן את מחיר השירות והודעה על כך תינתן למזמין מתחילת החודש לקבוצת ה WhatsAPP המשותפת .
+    </li>
+    <li>
+      10. המזמין רשאי להפסיק את השירות בכול עת ללא התראה מוקדמת
+    </li>
+   </ol>
+  </div>
+</div>

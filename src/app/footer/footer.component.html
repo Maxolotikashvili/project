@@ -1,34 +1,52 @@
-<footer>
+<footer class="footer">
+  <!-- Inactive -->
   <div class="non-responsive">
-  <div class="background">
-    <div class="arrowbox inactive" (click)="handleScroll()">
-      <a href="#">
-        <fa-icon [icon]="arrow" class="arrow"></fa-icon>
-      </a>
-    </div>
+    <div class="background"></div>
+
+    <!-- Form -->
+    <form [formGroup]="userForm" (submit)="handleSubmit($event)">
+      <div class="flexbox">
+        <input type="text" required placeholder="*שם" formControlName="email" />
+        <input
+          type="text"
+          required
+          placeholder="*טלפון"
+          formControlName="phone"
+        />
+      </div>
+
+      <div class="flexbox">
+        <input type="text" placeholder="דוא״ל" formControlName="message" />
+        <input
+          type="submit"
+          style="cursor: pointer"
+          class="background-submit"
+          value="שלח >"
+        />
+      </div>
+    </form>
+
+    <span class="number">משרד ראשי מגדל ב.ס.ר 4 רח' מצדה 7 בני - ברק 050-963-6166</span>
+    <fa-icon
+      [icon]="whatsup"
+      class="whatsup"
+    ></fa-icon>
+    <img src="/assets/logo-neto.png" class="logo" alt="image" />
   </div>
 
-  <span class="idk">הצטרפו להצלחה!</span>
-  
-  <!-- Form -->
-  <form [formGroup]="userForm" (submit)="handleSubmit($event)"> 
-    <div class="flexbox">
-      <input type="text" required placeholder="*שם" formControlName="email" />
-      <input type="text" required placeholder="*טלפון" formControlName="phone"/>
-    </div>
-
-    <div class="flexbox">
-      <input type="text" placeholder="דוא״ל" formControlName="message"/>
-      <input type="submit" style="cursor: pointer;" class="background-submit" value="שלח >"/>
-    </div>
-  </form>
-
-  <span class="number">או צרו קשר בטלפון 073-3962993</span>
-  <img src="/assets/logo-neto.png" class="logo" alt="" />
+  <div class="arrowbox inactive" (click)="handleScroll()">
+    <img src="assets/arrow-down.png" class="arrow" alt="image">
   </div>
 
   <div class="responsive">
-    <button class="second-button" (click)="scrollToForm()">להשארת פרטים</button>
-    <button class="first-button">התקשרו עכשיו</button>
+    <button class="second-button" (click)="openFooter('open')"><a href="#section5">להשארת פרטים</a></button>
+    <button class="first-button" (click)="openFooter('close')">התקשרו עכשיו</button>
   </div>
+
+  <div class="blankbox">
+    <app-blank *ngIf="blank" class="blanks"></app-blank>
+  </div>
+  <!-- Arrows -->
+  <img src="/assets/arrow-up.png" class="arrow-up" (click)="openFooter('open')" *ngIf="!blank" alt="image">
+  <img src="/assets/arrow-up.png" class="arrow-down" (click)="openFooter('close')" alt="image" *ngIf="blank">
 </footer>

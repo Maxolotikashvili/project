@@ -1,0 +1,243 @@
+$color: #07407b;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ol {
+    margin: 0;
+    line-height: 1em;
+}
+
+.bigbox {
+    font-size: 0.85vh;
+    height: fit-content;
+    background-color: #ffffff;
+    margin: auto;
+    width: 92em;
+    direction: ltr;
+    padding: 1.4em 4.8em;
+    line-height: 1em;
+
+    .logobox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.4em;
+
+        .logo {
+            width: 7em;
+            margin-right: 1.4em;
+        }
+
+        h4 {
+            font-size: 3.8em;
+        }
+    }
+
+    .line {
+        background-color: $color;
+        width: 100%;
+        height: 1px;
+    }
+
+    .h2box {
+        display: flex;
+        align-items: center;
+        margin: 1.2em 0px;
+        color: $color;
+
+        h2 {
+            font-size: 3.6em;
+        }
+
+        .column {
+            height: 4.8em;
+            width: 1px;
+            background-color: $color;
+            margin: 0px 3.6em 0px 9.6em;
+        }
+
+        h6 {
+            font-size: 1.4em;
+        }
+    }
+
+    .textbox {
+        direction: rtl;
+        margin-left: auto;
+        width: 30%;
+        margin: 1.4em 0px 1.4em auto;
+        color: $color;
+
+        h5 {
+            font-size: 2.4em;
+            color: inherit;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.8em;
+            color: inherit;
+            line-height: 1.4;
+        }
+    }
+
+    form {
+        direction: rtl;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 40em));
+        grid-row-gap: 1.4em;
+        grid-column-gap: 4.8em;
+
+        ::placeholder {
+            font-size: 1.8em;
+            color: inherit;
+        }
+
+        input {
+            max-width: 40em;
+            color: $color;
+            width: 100%;
+            height: 4em;
+            border-color: $color;
+            direction: rtl;
+            padding-right: 1.4em;
+            font-size: 1.1em;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .cardbox {
+            display: flex;
+            margin-top: 12px;
+
+            .card-number {
+                max-width: 20em;
+                width: 100%;
+                border-left: none;
+                font-size: 1.1em;
+            }
+
+            .card-cvv {
+                max-width: 10em;
+                width: 100%;
+                border-right: none;
+                padding: 0;
+                text-align: center;
+                direction: ltr;
+                font-size: 1.1em;
+            }
+
+            .card-expiration-date {
+                text-align: end;
+                max-width: 10em;
+                width: 100%;
+                padding: 0;
+                border-left: none;
+                border-right: none;
+                font-size: 1.1em;
+            }
+        }
+
+        button {
+            max-width: 15em;
+            font-size: 1.2em;
+            width: 100%;
+            height: 4.8em;
+            background-color: $color;
+            color: #ffffff;
+            border: none;
+            margin: 1.2em 0px 1.4em auto;
+            cursor: pointer;
+        }
+    }
+
+    // List
+    .listbox {
+        margin-top: 1.4em;
+        direction: rtl;
+
+        ol {
+            width: 47.2%;
+        }
+
+        li {
+            line-height: 1.6em;
+            font-size: 1.1em;
+            margin-bottom: 2px;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .bigbox {
+        width: 80em;
+        height: 100em;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+        .h2box {
+            flex-direction: column;
+            margin: 0;
+
+            h2 {
+                margin: 0.7em 0em;
+            }
+
+            .column {
+                width: 100%;
+                height: 1px;
+                margin: 0;
+            }
+
+            .columnbox {
+                display: flex;
+                padding: 2em 0em;
+            }
+        }
+
+        .textbox {
+            text-align: center;
+            width: 50%;
+            margin: 2em auto;
+        }
+
+        form {
+            grid-template-columns: repeat(1, minmax(0, 40em));
+            grid-column-gap: 0;
+            width: fit-content;
+            margin: auto;
+        }
+    }
+}
+
+@media (max-width: 655px) {
+    .bigbox {
+        width: 72em;
+    }
+}
+
+@media (max-width: 600px) {
+    .bigbox {
+        width: 62em;
+    }
+}
+
+@media (max-width: 510px) {
+    .bigbox {
+        width: 58em;
+
+        form {
+            input {
+                max-width: 42em;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -2,10 +2,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
-import SwiperCore, { EffectFade, Keyboard, Pagination } from 'swiper';
+import SwiperCore, { EffectFade, Keyboard, Pagination, Autoplay } from 'swiper';
 import { ImageComponent } from '../image/image.component';
 
-SwiperCore.use([EffectFade, Pagination, Keyboard]);
+SwiperCore.use([EffectFade, Pagination, Keyboard, Autoplay]);
 
 @Component({
   selector: 'app-home',
@@ -30,24 +30,6 @@ export class HomeComponent implements OnInit {
   message!: any;
 
   constructor(private dialog: MatDialog, private fb: FormBuilder) {}
-
-  list1: string[] = [
-    'אסלות תלויות עם מיכל הדחה סמוי',
-    'אביזרי אמבטיה יוקרתיים',
-    'דק עץ במרפסות',
-    'אריח גרניט פורצלן 80/80',
-    'קירות מסך בעלי בידוד כפול הכוללים תריס ונציאני פנימי חשמלי',
-    '4 מעליות מהירות לכל בניין',
-    'חדר כושר ומועדון דיירים מאובזר ויוקרתי',
-    'חניון תת קרקעי הכולל מערכת LPR',
-    'לובי מפואר עם חלל כפול',
-    'מערכת שמירה ואבטחה 24/7',
-    'מערכת אינטרקום במעגל סגור',
-    'מטבח מעוצב ויוקרתי',
-    'פרקט בחדרי השינה',
-    'מיזוג VRP דירתי',
-  ];
-  list2: string[] = this.list1.splice(0, 7);
 
   ngOnInit(): void {
     document.addEventListener('scroll', () => {
@@ -102,9 +84,13 @@ export class HomeComponent implements OnInit {
   }
 
   openImage() {
-    this.dialog.open(ImageComponent);
+    this.dialog.open(ImageComponent, {
+      panelClass: 'modal-image'
+    });
   }
 
+
+  // Post Request
   async handleSubmit(e: any) {
     e.preventDefault();
     this.spinnerMode = true;
