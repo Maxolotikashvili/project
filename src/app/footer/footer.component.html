@@ -39,12 +39,13 @@
   </div>
 
   <div class="responsive">
-    <button class="second-button" (click)="openFooter('open')"><a href="#section5">להשארת פרטים</a></button>
+    <button class="second-button" (click)="openFooter('open')">להשארת פרטים</button>
     <button class="first-button" (click)="openFooter('close')">התקשרו עכשיו</button>
   </div>
 
   <div class="blankbox">
-    <app-blank *ngIf="blank" class="blanks"></app-blank>
+    <app-blank  *ngIf="blank" class="blanks"></app-blank>
+    <fa-icon  *ngIf="blank" class="xmark" [icon]="xmark" (click)="openFooter('close')"></fa-icon>
   </div>
   <!-- Arrows -->
   <img src="/assets/arrow-up.png" class="arrow-up" (click)="openFooter('open')" *ngIf="!blank" alt="image">

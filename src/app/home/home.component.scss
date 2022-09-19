@@ -450,7 +450,6 @@ $space: 100px;
 
 @media (max-width: 1030px) {
     .megabox {
-
         .background {
             h3 {
                 margin-right: 0 !important;
@@ -459,7 +458,7 @@ $space: 100px;
         }
 
         .arrows {
-            bottom: 52%;
+            bottom: 53%;
             left: 50%;
         }
     }
@@ -537,7 +536,7 @@ $space: 100px;
 
             .linebigbox2 {
                 position: absolute;
-                bottom: -150%;
+                bottom: -152%;
             }
 
             h3 {
@@ -550,7 +549,7 @@ $space: 100px;
                 width: 90%;
                 font-size: 20px;
                 padding: 0 !important;
-                padding-right: 24px !important;
+                padding: 12px 24px 0px 0px !important;
             }
         }
     }
@@ -602,7 +601,7 @@ $space: 100px;
     #section3 {
         .textbox2 {
             .linebigbox2 {
-                bottom: -125%;
+                bottom: -127%;
             }
         }
     }
@@ -616,7 +615,7 @@ $space: 100px;
     #section3 {
         .textbox2 {
             .linebigbox2 {
-                bottom: -115%;
+                bottom: -117%;
             }
         }
     }
@@ -636,13 +635,13 @@ $space: 100px;
     #section3 {
         .textbox2 {
             .linebigbox2 {
-                bottom: -105%;
+                bottom: -107%;
             }
         }
     }
 }
 
-@media (max-width: 521px) {
+@media (max-width: 525px) {
     .background {
         .home {
             width: 60% !important;
@@ -653,6 +652,16 @@ $space: 100px;
         .textbox2 {
             .linebigbox2 {
                 bottom: -107%;
+            }
+        }
+    }
+}
+
+@media (max-width: 522px) {
+    #section3 {
+        .textbox2 {
+            .linebigbox2 {
+                bottom: -110%;
             }
         }
     }

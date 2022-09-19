@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-blank',
@@ -11,8 +10,9 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 export class BlankComponent implements OnInit {
   userForm!: FormGroup;
   arrowDown: any = faArrowDown;
+  xmark: any = faXmark;
 
-  API_URL: string = ''
+  API_URL: string = '';
 
   // Spinner
   spinnerMode: boolean = false;
@@ -33,7 +33,7 @@ export class BlankComponent implements OnInit {
   formErrorMessage: string = '';
   formSuccessMessage: string = '';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -46,14 +46,14 @@ export class BlankComponent implements OnInit {
       cvv: ['', [Validators.required, Validators.min(100), Validators.max(9999)]],
     });
 
-     // Getters
-     this.CompanyName = this.userForm.get('companyName');
-     this.Email = this.userForm.get('email');
-     this.Phone = this.userForm.get('phone');
-     this.CardOwner = this.userForm.get('cardOwner');
-     this.CardNumber = this.userForm.get('cardNumber');
-     this.Expiry = this.userForm.get('expiry');
-     this.Cvv = this.userForm.get('cvv');
+    // Getters
+    this.CompanyName = this.userForm.get('companyName');
+    this.Email = this.userForm.get('email');
+    this.Phone = this.userForm.get('phone');
+    this.CardOwner = this.userForm.get('cardOwner');
+    this.CardNumber = this.userForm.get('cardNumber');
+    this.Expiry = this.userForm.get('expiry');
+    this.Cvv = this.userForm.get('cvv');
   };
 
   modifyInput(ele: any) {
@@ -70,14 +70,14 @@ export class BlankComponent implements OnInit {
       this.expiryMonthTextField = "";
     }
 
-    if (value.length === 0) {this.dateCondition = false}
+    if (value.length === 0) { this.dateCondition = false }
   }
 
   // Post Request
   async handleSubmit(e: any) {
     e.preventDefault();
 
-    this.spinnerMode =  true;
+    this.spinnerMode = true;
 
     if (this.userForm.status === 'INVALID') return;
 

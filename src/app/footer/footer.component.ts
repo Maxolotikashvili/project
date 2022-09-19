@@ -6,6 +6,7 @@ import {
   faAngleDown,
   faAnglesUp,
   faAngleUp,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
 
@@ -18,6 +19,7 @@ export class FooterComponent implements OnInit {
   angleDown: any = faAngleDown;
   angleUp: any = faAngleUp;
   anglesUp: any = faAnglesUp;
+  xmark: any = faXmark;
   whatsup: any = faWhatsapp;
   userForm!: FormGroup;
 
@@ -30,6 +32,7 @@ export class FooterComponent implements OnInit {
 
   // Blank
   blank: boolean = false;
+
 
   // FooterForm Getter Variables
   Email_Footer!: any;
@@ -47,7 +50,7 @@ export class FooterComponent implements OnInit {
   formErrorMessage: string = '';
   formSuccessMessage: string = '';
 
-  constructor(private fb: FormBuilder, private dialog: MatDialog) {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     document.addEventListener('scroll', () => {
