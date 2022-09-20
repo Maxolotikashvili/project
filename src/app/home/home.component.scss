@@ -36,7 +36,6 @@ $space: 100px;
 .swiper {
     width: 100%;
     height: 100%;
-    user-select: none;
 }
 
 .swiper-slide {
@@ -91,10 +90,18 @@ $space: 100px;
         width: 100%;
         height: 100vh;
 
+        img {
+            user-select: none;
+        }
+
         .home {
             width: 50%;
             display: flex;
             flex-direction: column;
+        
+            .position {
+                position: relative;
+            }
 
             .line {
                 @include lines();
@@ -111,7 +118,7 @@ $space: 100px;
                 margin-right: $space;
                 padding-left: 24px;
                 color: $color;
-                line-height: 60px;
+                line-height: 1.3;
                 height: 280px;
                 width: 80%;
                 font-size: 36px;
@@ -133,8 +140,9 @@ $space: 100px;
 
     .arrows {
         position: absolute;
-        bottom: 11%;
-        left: 49%;
+        bottom: 9%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 200;
         cursor: pointer;
     }
@@ -176,7 +184,7 @@ $space: 100px;
             .photobox1 {
                 background-image: url("/assets/5.jpg");
                 @include image();
-                width: 50%;
+                width: 50vw;
                 height: 100vh;
             }
 
@@ -234,7 +242,7 @@ $space: 100px;
                 h3 {
                     width: 100%;
                     margin: 0 !important;
-                    line-height: 80px;
+                    line-height: 1;
                     width: 100%;
                     text-align: end;
                     font-size: 72px;
@@ -262,18 +270,18 @@ $space: 100px;
                 justify-content: center;
 
                 .linebigbox3 {
+                    width: 70%;
                     display: flex;
                     flex-direction: column;
-                    width: fit-content;
                 }
 
                 h3 {
-                    width: 72%;
+                    width: 70%;
                     margin: 0 !important;
                     margin-right: auto !important;
-                    text-align: center;
-                    line-height: 60px;
-                    font-size: 72px;
+                    text-align: end;
+                    line-height: 1;
+                    font-size: 48px;
                     color: $color;
                 }
 
@@ -308,8 +316,8 @@ $space: 100px;
 
             h3 {
                 margin: 0 !important;
-                line-height: 80px;
-                font-size: 72px;
+                line-height: 1;
+                font-size: 48px;
                 color: $color;
             }
 
@@ -380,7 +388,9 @@ $space: 100px;
     padding: 0 !important;
 }
 
-// Responsive
+
+// Responsive 
+
 
 @media (max-width: 1500px) {
     #section5 {
@@ -402,23 +412,20 @@ $space: 100px;
         }
     }
 }
- 
+
 @media (max-width: 1250px) {
     .swiper-pagination {
         display: none;
     }
 
     .background {
-        .linebox {
-            display: none;
-        }
-
         .imagebox {
             width: 100% !important;
             position: relative !important;
         }
 
         .home {
+            width: 60% !important;
             text-align: center;
             background-color: #ffffff44;
             z-index: 200;
@@ -428,9 +435,21 @@ $space: 100px;
             border-top-left-radius: 15px;
             border-bottom-left-radius: 15px;
 
+            .arrows {
+                top: -20%;
+                left: 10%;
+                transform: translate(0%, 0%);
+            }
+
             h3 {
-                font-size: 36px !important;
-                line-height: 36px !important;
+                width: 82% !important;
+                font-size: 1.6rem !important;
+                line-height: 1.1 !important;
+                height: 100px !important;
+            }
+
+            .linebox {
+                margin: 30px 0px 10px 0px !important;
             }
         }
     }
@@ -451,15 +470,14 @@ $space: 100px;
 @media (max-width: 1030px) {
     .megabox {
         .background {
-            h3 {
-                margin-right: 0 !important;
-                margin-right: 24px !important;
+            .home {
+                h3 {
+                    line-height: 1.1 !important;
+                    margin-right: 0 !important;
+                    margin-right: 24px !important;
+                    font-size: 2.8vw !important;
+                }
             }
-        }
-
-        .arrows {
-            bottom: 53%;
-            left: 50%;
         }
     }
 
@@ -469,9 +487,11 @@ $space: 100px;
         flex-direction: column;
 
         .photobox1 {
-            background-image: url('/assets/borderradius.png');
+            background-image: url("/assets/borderradius.png");
             background-size: contain;
-            width: 94%;
+            width: 94vw;
+            height: 79vw;
+            margin: 44px 00px 88px 0px;
         }
 
         .textbox1 {
@@ -480,7 +500,11 @@ $space: 100px;
             text-align: center;
 
             .linebigbox1 {
-                width: 60%;
+                width: 65%;
+
+                h3 {
+                    line-height: 1;
+                }
             }
 
             h3 {
@@ -492,10 +516,10 @@ $space: 100px;
 
             p {
                 padding: 0;
-                padding-right: 24px;
+                padding: 0px 24px;
                 width: 100%;
                 margin: auto !important;
-                text-align: center;
+                text-align: justify;
             }
         }
 
@@ -525,18 +549,24 @@ $space: 100px;
     }
 
     #section3 {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+
         .photobox2 {
             width: 40%;
         }
 
         .textbox2 {
-            height: 85vh;
-            justify-content: flex-start !important;
-            align-items: flex-start;
-
             .linebigbox2 {
                 position: absolute;
-                bottom: -152%;
+                bottom: 100%;
+                margin: 44px 0px;
+
+                .linebox {
+                    margin: 0;
+                    margin-top: 12px;
+                }
             }
 
             h3 {
@@ -555,7 +585,7 @@ $space: 100px;
     }
 
     #section5 {
-        background-image: url('/assets/8.png');
+        background-image: url("/assets/8.png");
         @include image();
         width: 100%;
         display: flex;
@@ -579,6 +609,7 @@ $space: 100px;
             display: none;
         }
     }
+
 }
 
 @media (max-width: 960px) {
@@ -591,31 +622,43 @@ $space: 100px;
         }
     }
 }
- 
-@media (max-width: 940px) {
-    .photobox1 {
-        height: 70vh !important;
-        margin-top: 44px;
-    }
 
-    #section3 {
-        .textbox2 {
-            .linebigbox2 {
-                bottom: -127%;
+@media (max-width: 700px) {
+    .megabox {
+        .background {
+            .home {
+                h3 {
+                    height: 100px !important;
+                    font-size: 2.8vw !important;
+                }
+
+                .square, .square1-active {
+                    width: 8px;
+                    height: 8px;
+                }
+
+                .arrows {
+                    width: 20px;
+                    top: -20%;
+                }
             }
         }
-    }
-}
 
-@media (max-width: 730px) {
-    .photobox1 {
-        height: 60vh !important;
-    }
-
-    #section3 {
-        .textbox2 {
-            .linebigbox2 {
-                bottom: -117%;
+        .linebox {
+            .square1,
+            .square2,
+            .square3,
+            .square4 {
+                @include squares();
+                width: 12px;
+                height: 12px;
+            }
+    
+            .square1-active,
+            .square2-active,
+            .square3-active,
+            .square4-active {
+                opacity: 1;
             }
         }
     }
@@ -627,49 +670,21 @@ $space: 100px;
             font-size: 52px;
         }
     }
-
-    .photobox1 {
-        height: 50vh !important;
-    }
-
-    #section3 {
-        .textbox2 {
-            .linebigbox2 {
-                bottom: -107%;
-            }
-        }
-    }
-}
-
-@media (max-width: 525px) {
-    .background {
-        .home {
-            width: 60% !important;
-        }
-    }
-
-    #section3 {
-        .textbox2 {
-            .linebigbox2 {
-                bottom: -107%;
-            }
-        }
-    }
-}
-
-@media (max-width: 522px) {
-    #section3 {
-        .textbox2 {
-            .linebigbox2 {
-                bottom: -110%;
-            }
-        }
-    }
 }
 
 @media (max-width: 500px) {
-    .photobox1 {
-        height: 50vh !important;
+    .megabox {
+        .background {
+            .home {
+                h3 {
+                    height: 70px !important;
+                }
+
+                .arrows {
+                    top: -25%;
+                }
+            }
+        }
     }
 
     .textbox2 {
@@ -689,17 +704,19 @@ $space: 100px;
     }
 }
 
-@media (max-width: 432px) {
-    .background {
-        .home {
-            width: 75% !important;
+@media (max-width: 420px) {
+    .megabox {
+        .background {
+            .home {
+                h3 {
+                    height: 40px !important;
+                }
+
+                .arrows {
+                    top: -35%;
+                }
+            }
         }
     }
-}
 
-@media (max-width: 420px) {
-    .photobox1,
-    .photobox2 {
-        height: 35vh !important;
-    }
 }

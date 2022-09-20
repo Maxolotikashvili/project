@@ -7,11 +7,17 @@
         [loop]="true"
         [autoplay]="{ delay: 3000, disableOnInteraction: false }"
         [keyboard]="{ enabled: true }"
-        class="swiper-home">
-        
+        class="swiper-home"
+      >
         <ng-template swiperSlide>
           <div class="background">
             <div class="home">
+              <img
+                src="/assets/arrow-down.png"
+                (click)="handleScroll()"
+                class="arrows"
+                alt="image"
+              />
               <h3>
                 אחריות – אנו חלוצים ליישום סטנדרטים ומקצוענות שיובל בעלי עסקים
                 לעולם מצליח יותר
@@ -31,6 +37,12 @@
         <ng-template swiperSlide>
           <div class="background">
             <div class="home">
+              <img
+                src="/assets/arrow-down.png"
+                (click)="handleScroll()"
+                class="arrows"
+                alt="image"
+              />
               <h3>
                 יושרה – אנו מחויבים לסודיות מוחלטת ושימוש נכון במידע כדי להגן על
                 הלקוחות שלנו
@@ -50,6 +62,12 @@
         <ng-template swiperSlide>
           <div class="background">
             <div class="home">
+              <img
+                src="/assets/arrow-down.png"
+                (click)="handleScroll()"
+                class="arrows"
+                alt="image"
+              />
               <h3>
                 מצוינות – בשילוב של אמצעים טכנולוגים המתקדמים ביותר וצוות עובדים
                 מיומן ומנוסה שמפקח על העסק שלך היכולת שלנו להגיע לחקר האמת
@@ -69,6 +87,12 @@
         <ng-template swiperSlide>
           <div class="background">
             <div class="home">
+              <img
+                src="/assets/arrow-down.png"
+                (click)="handleScroll()"
+                class="arrows"
+                alt="image"
+              />
               <h3>
                 מטרה - המוקד מנוהל על ידי קבוצת אנשים מקצועיים ביותר עם חזון
                 ליצור עולם מרוויח ובטוח לבתי עסק .
@@ -86,8 +110,11 @@
         </ng-template>
       </swiper>
 
-
-      <img src="/assets/arrow-down.png" (click)="handleScroll()" class="arrows" alt="image">
+      <!-- <img
+        src="/assets/arrow-down.png"
+        (click)="handleScroll()"
+        class="arrows"
+        alt="image"/> -->
     </div>
   </section>
 
@@ -97,11 +124,11 @@
     <section id="section2">
       <div class="textbox1">
         <div class="linebigbox1">
-        <h3>אודות החברה</h3>
-        <div class="linebox">
-          <div class="line1"></div>
-          <div class="square1"></div>
-        </div>
+          <h3>אודות החברה</h3>
+          <div class="linebox">
+            <div class="line1"></div>
+            <div class="square1"></div>
+          </div>
         </div>
         <p>
           הקבוצה החלה את פעילותה כחברה לאספקת כוח אדם וניקיון ומספקת עובדי
@@ -117,11 +144,11 @@
     <section id="section3">
       <div class="textbox2">
         <div class="linebigbox2">
-        <h3>שירות המוקד</h3>
-        <div class="linebox">
-          <div class="line2"></div>
-          <div class="square2"></div>
-        </div>
+          <h3>שירות המוקד</h3>
+          <div class="linebox">
+            <div class="line2"></div>
+            <div class="square2"></div>
+          </div>
         </div>
         <div class="listbox">
           כהמשך טבעי לצמיחתה העסקית , קבוצת נטו הרחיבה את תחומי פעילותה וכיום
@@ -137,11 +164,11 @@
     <section id="section4">
       <div class="textbox3">
         <div class="linebigbox3">
-        <h3>עלויות</h3>
-        <div class="linebox">
-          <div class="line3"></div>
-          <div class="square3"></div>
-        </div>
+          <h3>עלויות</h3>
+          <div class="linebox">
+            <div class="line3"></div>
+            <div class="square3"></div>
+          </div>
         </div>
         <p>
           עלות שירותי המוקד 5.7 ₪ לשעת צפייה -בסוף כל יום יישלח דוח עם פויינטרים
@@ -157,11 +184,11 @@
     <section id="section5">
       <div class="box">
         <div class="linebigbox4">
-        <h3>אודות קבוצת בסר</h3>
-        <div class="linebox">
-          <div class="line4"></div>
-          <div class="square4"></div>
-        </div>
+          <h3>אודות קבוצת בסר</h3>
+          <div class="linebox">
+            <div class="line4"></div>
+            <div class="square4"></div>
+          </div>
         </div>
 
         <img src="/assets/last.png" alt="image" />
@@ -177,7 +204,6 @@
           בישראל, ארה”ב ואירופה. הקבוצה לוקחת חלק פעיל בפרויקט “אמץ לוחם” זה
           מספר שנים, במסגרתו היא מאמצת את היחידה המובחרת “אגוז”.
         </p>
-        
       </div>
       <div class="photobox3"></div>
     </section>

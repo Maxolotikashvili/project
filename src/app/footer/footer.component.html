@@ -1,7 +1,11 @@
 <footer class="footer">
   <!-- Inactive -->
   <div class="non-responsive">
-    <div class="background"></div>
+    <div class="background">
+      <!-- Arrows -->
+  <img src="/assets/arrow-up.png" class="arrow-up" (click)="openFooter('open')" *ngIf="!blank" alt="image">
+  <img src="/assets/arrow-up.png" class="arrow-down" (click)="openFooter('close')" alt="image" *ngIf="blank">
+    </div>
 
     <!-- Form -->
     <form [formGroup]="userForm" (submit)="handleSubmit($event)">
@@ -48,6 +52,6 @@
     <fa-icon  *ngIf="blank" class="xmark" [icon]="xmark" (click)="openFooter('close')"></fa-icon>
   </div>
   <!-- Arrows -->
-  <img src="/assets/arrow-up.png" class="arrow-up" (click)="openFooter('open')" *ngIf="!blank" alt="image">
-  <img src="/assets/arrow-up.png" class="arrow-down" (click)="openFooter('close')" alt="image" *ngIf="blank">
+  <!-- <img src="/assets/arrow-up.png" class="arrow-up" (click)="openFooter('open')" *ngIf="!blank" alt="image">
+  <img src="/assets/arrow-up.png" class="arrow-down" (click)="openFooter('close')" alt="image" *ngIf="blank"> -->
 </footer>
