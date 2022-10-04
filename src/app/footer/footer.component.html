@@ -3,8 +3,20 @@
   <div class="non-responsive">
     <div class="background">
       <!-- Arrows -->
-  <img src="/assets/arrow-up.png" class="arrow-up" (click)="openFooter('open')" *ngIf="!blank" alt="image">
-  <img src="/assets/arrow-up.png" class="arrow-down" (click)="openFooter('close')" alt="image" *ngIf="blank">
+      <img
+        src="/assets/arrow-up.png"
+        class="arrow-up"
+        (click)="openFooter('open')"
+        *ngIf="!blank"
+        alt="image"
+      />
+      <img
+        src="/assets/arrow-up.png"
+        class="arrow-down"
+        (click)="openFooter('close')"
+        alt="image"
+        *ngIf="blank"
+      />
     </div>
 
     <!-- Form -->
@@ -30,28 +42,33 @@
       </div>
     </form>
 
-    <span class="number">משרד ראשי מגדל ב.ס.ר 4 רח' מצדה 7 בני - ברק 050-963-6166</span>
-    <fa-icon
-      [icon]="whatsup"
-      class="whatsup"
-    ></fa-icon>
+    <span class="number"
+      >משרד ראשי מגדל ב.ס.ר 4 רח' מצדה 7 בני - ברק 050-963-6166</span
+    >
+    <fa-icon [icon]="whatsup" class="whatsup"></fa-icon>
     <img src="/assets/logo-neto.png" class="logo" alt="image" />
   </div>
 
   <div class="arrowbox inactive" (click)="handleScroll()">
-    <img src="assets/arrow-down.png" class="arrow" alt="image">
+    <img src="assets/arrow-down.png" class="arrow" alt="image" />
   </div>
 
   <div class="responsive">
-    <button class="second-button" (click)="openFooter('open')">להשארת פרטים</button>
-    <button class="first-button" (click)="openFooter('close')">התקשרו עכשיו</button>
+    <button class="second-button" (click)="openFooter('open')">
+      להשארת פרטים
+    </button>
+    <button class="first-button" (click)="openFooter('close')">
+      התקשרו עכשיו
+    </button>
   </div>
 
   <div class="blankbox">
-    <app-blank  *ngIf="blank" class="blanks"></app-blank>
-    <fa-icon  *ngIf="blank" class="xmark" [icon]="xmark" (click)="openFooter('close')"></fa-icon>
+    <app-blank *ngIf="blank" class="blanks"></app-blank>
+    <fa-icon
+      *ngIf="blank"
+      class="xmark"
+      [icon]="xmark"
+      (click)="openFooter('close')"
+    ></fa-icon>
   </div>
-  <!-- Arrows -->
-  <!-- <img src="/assets/arrow-up.png" class="arrow-up" (click)="openFooter('open')" *ngIf="!blank" alt="image">
-  <img src="/assets/arrow-up.png" class="arrow-down" (click)="openFooter('close')" alt="image" *ngIf="blank"> -->
 </footer>
